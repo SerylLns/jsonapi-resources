@@ -227,7 +227,7 @@ module JSONAPI
     end
 
     def default_processor_klass=(default_processor_klass)
-      ActiveSupport::Deprecation.warn('`default_processor_klass` has been replaced by `default_processor_klass_name`.')
+      Rails.logger.warn('`default_processor_klass` has been replaced by `default_processor_klass_name`.')
       @default_processor_klass = default_processor_klass
     end
 
@@ -241,18 +241,18 @@ module JSONAPI
     end
 
     def allow_include=(allow_include)
-      ActiveSupport::Deprecation.warn('`allow_include` has been replaced by `default_allow_include_to_one` and `default_allow_include_to_many` options.')
+      Rails.logger.warn('`allow_include` has been replaced by `default_allow_include_to_one` and `default_allow_include_to_many` options.')
       @default_allow_include_to_one = allow_include
       @default_allow_include_to_many = allow_include
     end
 
     def whitelist_all_exceptions=(allow_all_exceptions)
-      ActiveSupport::Deprecation.warn('`whitelist_all_exceptions` has been replaced by `allow_all_exceptions`')
+      Rails.logger.warn('`whitelist_all_exceptions` has been replaced by `allow_all_exceptions`')
       @allow_all_exceptions = allow_all_exceptions
     end
 
     def exception_class_whitelist=(exception_class_allowlist)
-      ActiveSupport::Deprecation.warn('`exception_class_whitelist` has been replaced by `exception_class_allowlist`')
+      Rails.logger.warn('`exception_class_whitelist` has been replaced by `exception_class_allowlist`')
       @exception_class_allowlist = exception_class_allowlist
     end
 
